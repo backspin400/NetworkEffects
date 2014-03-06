@@ -1,0 +1,10 @@
+%network relations
+
+users=1:100;
+rating=.01:.01:1;
+similarities=zeros(1,100);
+for i=1:100
+similarities(i)=rand;
+end
+
+willSayYes
