@@ -1,9 +1,5 @@
 %network relations
 
-users=1:10;
-rating=1:10;
+users=1:100;
+rating=1:100;
 
-% function willSayYes(user1index,user2index){
-%  return ceil(rand()-abs(rating[user1index]-rating[user2index])    
-% 
-% }
