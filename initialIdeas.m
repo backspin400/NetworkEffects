@@ -1,10 +1,14 @@
 %network relations
 
-users=1:100;
-rating=.01:.01:1;
-similarities=.01:.01:1;
+users(1:20)=10;
+users(21:40)=30;
+users(41:60)=50;
+users(61:80)=70;
+users(81:100)=90;
+rating=users/100;
+similarities=rating;
 group=1:100;
-group
+
 ratingWeight=1;
 similaritiesWeight=1;
 totgroups=100;
@@ -19,10 +23,11 @@ similarities(80)=.80;
 for i=1:100
     for j=1:100
         test(i,j)=willSayYes(users(i),users(j), rating, similarities, ratingWeight, similaritiesWeight);
-        if (test(i))
+        if (test(i,j))
+            group(j)=ceil((group(i)+group(j))/2);
             group(i)=group(j);
         else 
-            totgroups=totgroups+1; 
+            
             group(i)=0;
         end
         
