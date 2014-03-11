@@ -1,4 +1,4 @@
-%network relations
+    %network relations
 
 users(1:20)=10;
 users(21:40)=30;
@@ -21,16 +21,15 @@ similarities(50)=.50;
 similarities(80)=.80;
 
 for i=1:100
-    for j=1:100
-        test(i,j)=willSayYes(users(i),users(j), rating, similarities, ratingWeight, similaritiesWeight);
+   
+        test(i)=willSayYes(users(i),users(50), rating, similarities, ratingWeight, similaritiesWeight);
         if (test(i,j))
-            group(j)=ceil((group(i)+group(j))/2);
+            group(j)=ceil((group(i)+group(50))/2);
             group(i)=group(j);
         else 
             
             group(i)=0;
         end
         
-    end
 end
 sum(test)
